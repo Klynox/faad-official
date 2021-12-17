@@ -7,35 +7,7 @@
           <img src="@/static/images/icon/message-light.png" />Talk to someone
           now
         </a>
-        <div class="stats-wrapper">
-          <h5 class="text-muted">Trending today</h5>
-          <div class="d-flex justify-content-between mt-3">
-            <div class="d-flex align-items-start flex-column">
-              <div class="stat-title">Petrol</div>
-              <div class="stat-unit">
-                ALGO<span class="value green">0.25%</span>
-              </div>
-              <div class="stat-price">N500</div>
-            </div>
-            <div class="d-flex align-items-start flex-column">
-              <div class="stat-title">Petrol</div>
-              <div class="stat-unit">
-                ALGO<span class="value green">0.25%</span>
-              </div>
-              <div class="stat-price">N500</div>
-            </div>
-            <div class="d-flex align-items-start flex-column">
-              <div class="stat-title">Petrol</div>
-              <div class="stat-unit">
-                ALGO<span class="value green">0.25%</span>
-              </div>
-              <div class="stat-price">N500</div>
-            </div>
-            <div class="d-none d-sm-flex align-items-center flex-column">
-              <a href="" class="btn call-to-action">Bargain</a>
-            </div>
-          </div>
-        </div>
+        <Stats />
       </div>
     </div>
   </div>
@@ -45,7 +17,7 @@
 export default {};
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .call-to-action {
   background: #f58634;
   border-color: transparent;
@@ -58,7 +30,7 @@ export default {};
   }
 }
 .stats-wrapper {
-  box-shadow: 11px 14px 13px 9px rgba(#F58634, 0.2);
+  box-shadow: 11px 14px 13px 9px rgba(#f58634, 0.2);
   display: inline-block;
   padding: 20px 38px;
   background: #fff;
