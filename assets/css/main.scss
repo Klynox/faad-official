@@ -150,8 +150,21 @@ footer {
     color: #959898;
   }
 }
-@media (max-width: 767px){
+@media (max-width: 767px) {
   .feature-Hslwq + .feature-Hslwq {
     margin-top: 1.6rem;
+  }
+}
+.partnerhips {
+  background: #fff;
+  padding-top: 7rem;
+  padding-bottom: 5rem;
+
+  .partners-slide {
+    margin-top: 2rem;
+
+    img {
+      max-width: 160px;
+    }
   }
 }
