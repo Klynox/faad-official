@@ -62,6 +62,24 @@
         </div>
       </div>
     </section>
+    <section class="process-dhl">
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col-md-5">
+            <h2 class="section-title">Seamless process from end to end</h2>
+            <p class="section-para">
+              From enquiry to delivery, there’s no stress on you. We are
+              committed to making sure there’s no stress on you. Our goal is
+            </p>
+            <img src="@/static/images/process-flow.svg" class="flow-tsh"/>
+          </div>
+          <div class="col-md-5">
+            <img src="@/static/images/process.png" class="card-imag-xjsjl" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <Footer/>
   </div>
 </template>
 
