@@ -12,7 +12,7 @@ body {
   color: #101010;
   width: 100%;
   overflow-x: hidden;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -29,4 +29,32 @@ body {
 ::-moz-selection {
   background: $selection-color;
   color: #fff;
+}
+.about {
+  margin-top: 8rem;
+}
+@media (max-width: 767px) {
+  .about {
+    margin-top: 4rem;
+  }
+}
+.section-title {
+  font-size: 2rem;
+  line-height: 2.675rem;
+  color: #1d1d26;
+}
+p.section-para {
+  font-size: 0.99rem;
+  line-height: 1.7rem;
+  color: #1d1d26;
+  margin-bottom: 0.8rem;
+}
+.card-imag-xjsjl {
+  max-width: 484px;
+  width: 100%;
+  max-height: 440px;
+  padding: 1rem;
+}
+.info-section {
+  margin-top: 4rem;
 }

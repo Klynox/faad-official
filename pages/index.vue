@@ -10,6 +10,58 @@
         <Stats />
       </div>
     </div>
+    <section class="about">
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col-md-5">
+            <h2 class="section-title">Quality, speed and service</h2>
+            <p class="section-para">
+              We take the required fuel specifications from our clients at the
+              point of enquiry to ensure that we match it.
+            </p>
+            <p class="section-para">
+              The quality of our fuel is uncompromized, we source for the best
+              and highest quality available.
+            </p>
+            <p class="section-para">
+              We also meet specifications for different fuel usage. Anything you
+              need.
+            </p>
+          </div>
+          <div class="col-md-5">
+            <img src="@/static/images/about-1.png" class="card-imag-xjsjl" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="info-section">
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col-md-5">
+            <img src="@/static/images/info-1.png" class="card-imag-xjsjl" />
+          </div>
+          <div class="col-md-5">
+            <h2 class="section-title">
+              Available 24/7 <strong>0700FAADOIL</strong>
+            </h2>
+            <p class="section-para">
+              All our communication lines are open all day. Our emergency call
+              line is active 24/7 and we attend to product and service requests
+              the moment you make a request. In 2018, we supplied over 600
+              emergency fuel demands
+            </p>
+            <h2 class="section-title mt-5">
+              Oil prizes daily updated and open for bargain
+            </h2>
+            <p class="section-para">
+              We offer the most reasonable fuel prizes, they are daily updated
+              and open for bargain. This means that you can chat with us live or
+              call to get an even better pricing based on your order quantity
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
