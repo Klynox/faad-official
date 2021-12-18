@@ -34,6 +34,9 @@
           <a href="" class="btn call-to-action">Bargain</a>
         </div>
       </div>
+      <div class="d-flex d-sm-none justify-content-center mt-3">
+        <a href="" class="btn call-to-action">Bargain</a>
+      </div>
     </div>
   </div>
 </template>

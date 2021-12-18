@@ -1,8 +1,8 @@
 <template>
   <div>
     <Header />
-    <div class="position-relative py-4 px-5">
-      <div class="container-fluid d-md-flex justify-content-between">
+    <div class="position-relative py-4 px-5 mt-4">
+      <div class="container-fluid d-md-flex justify-content-between pt-4">
         <a href="" class="btn call-to-action xdb">
           <img src="@/static/images/icon/message-light.png" />Talk to someone
           now
