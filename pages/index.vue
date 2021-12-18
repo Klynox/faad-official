@@ -138,6 +138,78 @@
         </div>
       </div>
     </section>
+    <section class="features">
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col-md-6 feature-Hslwq">
+            <h2>Our Range of Products</h2>
+            <b-nav vertical>
+              <b-nav-item class="d-flex align-items-center">
+                <img src="@/static/images/icon/check.png" />
+                <span>Red diesel</span>
+              </b-nav-item>
+              <b-nav-item class="d-flex align-items-center">
+                <img src="@/static/images/icon/check.png" />
+                <span>White diesel</span>
+              </b-nav-item>
+              <b-nav-item class="d-flex align-items-center">
+                <img src="@/static/images/icon/check.png" />
+                <span>Premium Motor Spirits (PMS)</span>
+              </b-nav-item>
+              <b-nav-item class="d-flex align-items-center">
+                <img src="@/static/images/icon/check.png" />
+                <span>HVO fuel</span>
+              </b-nav-item>
+              <b-nav-item class="d-flex align-items-center">
+                <img src="@/static/images/icon/check.png" />
+                <span>Kerosine</span>
+              </b-nav-item>
+              <b-nav-item class="d-flex align-items-center">
+                <img src="@/static/images/icon/check.png" />
+                <span>Industrial Lubricants</span>
+              </b-nav-item>
+              <b-nav-item class="d-flex align-items-center">
+                <img src="@/static/images/icon/check.png" />
+                <span>Industrial Heating Oil</span>
+              </b-nav-item>
+            </b-nav>
+          </div>
+          <div class="col-md-6 feature-Hslwq">
+            <h2>Our Fuel Related Services</h2>
+            <b-nav vertical>
+              <b-nav-item class="d-flex align-items-center">
+                <img src="@/static/images/icon/check.png" />
+                <span>Haulage</span>
+              </b-nav-item>
+              <b-nav-item class="d-flex align-items-center">
+                <img src="@/static/images/icon/check.png" />
+                <span>Emergency Oil Delivery</span>
+              </b-nav-item>
+              <b-nav-item class="d-flex align-items-center">
+                <img src="@/static/images/icon/check.png" />
+                <span>Environmental Services</span>
+              </b-nav-item>
+              <b-nav-item class="d-flex align-items-center">
+                <img src="@/static/images/icon/check.png" />
+                <span>Fuel Management</span>
+              </b-nav-item>
+              <b-nav-item class="d-flex align-items-center">
+                <img src="@/static/images/icon/check.png" />
+                <span>Nationwide Fuel Delivery</span>
+              </b-nav-item>
+              <b-nav-item class="d-flex align-items-center">
+                <img src="@/static/images/icon/check.png" />
+                <span>Priority Contracts</span>
+              </b-nav-item>
+              <b-nav-item class="d-flex align-items-center">
+                <img src="@/static/images/icon/check.png" />
+                <span>Technical Support</span>
+              </b-nav-item>
+            </b-nav>
+          </div>
+        </div>
+      </div>
+    </section>
     <Footer />
   </div>
 </template>
