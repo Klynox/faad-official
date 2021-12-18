@@ -55,17 +55,66 @@ p.section-para {
   max-height: 440px;
   padding: 1rem;
 }
-.info-section, .process-dhl {
+.info-section,
+.process-dhl {
   margin-top: 4rem;
+}
+.offers-section {
+  background: rgba(#f1bd37, 0.2);
+  padding-top: 4rem;
+  padding-bottom: 5rem;
+}
+.process-dhl {
+  margin-bottom: 4rem;
 }
 .flow-tsh {
   max-height: 400px;
   max-width: 100%;
 }
 footer {
-  background: #1A1A1A;
+  background: #1a1a1a;
   padding-top: 9rem;
   padding-bottom: 6.25rem;
   padding-left: 2rem;
   padding-right: 2rem;
+}
+.offer-card {
+  min-height: 390px;
+  background: #ffffff;
+  padding: 1.8rem 2rem;
+  margin-bottom: 10px;
+
+  h3 {
+    white-space: initial;
+    font-size: 1.3rem;
+    line-height: 1.42rem;
+    color: #65656c;
+  }
+
+  p {
+    font-weight: 500;
+    font-size: 0.92rem;
+    line-height: 1.4rem;
+    color: #1d1d26;
+  }
+
+  .anchor {
+    font-weight: 600;
+    font-size: 0.92rem;
+    line-height: 1.4rem;
+    color: #1d1d26;
+
+    img {
+      width: 16px;
+      height: 16px;
+      margin-right: 0.2rem;
+      margin-bottom: 0 !important;
+    }
+  }
+
+  img {
+    margin-bottom: 0.95rem;
+    height: 130px;
+    width: 130px;
+  }
 }

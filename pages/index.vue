@@ -71,7 +71,7 @@
               From enquiry to delivery, there’s no stress on you. We are
               committed to making sure there’s no stress on you. Our goal is
             </p>
-            <img src="@/static/images/process-flow.svg" class="flow-tsh"/>
+            <img src="@/static/images/process-flow.svg" class="flow-tsh" />
           </div>
           <div class="col-md-5">
             <img src="@/static/images/process.png" class="card-imag-xjsjl" />
@@ -79,7 +79,66 @@
         </div>
       </div>
     </section>
-    <Footer/>
+    <section class="offers-section">
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col-md-7">
+            <h2 class="section-title">Programs and offers</h2>
+            <p class="section-para">
+              We support the business and goals of our clients with custom
+              offers, pricing and payment plans
+            </p>
+          </div>
+        </div>
+        <div
+          class="row mt-3 justify-content-between"
+          style="margin-left: 0; margin-right: 0"
+        >
+          <div class="col-sm-6 col-md-6 col-lg-4 d-flex flex-column">
+            <div class="offer-card">
+              <img src="@/static/images/offer-kha-1.png" />
+              <h3>Partners Subscription</h3>
+              <p>
+                We deliver the products you need monthly or regularly, with a
+                comfortable payment plan.
+              </p>
+              <a href="" class="d-flex align-items-center mt-3 anchor">
+                <img src="@/static/images/icon/anchor.png" />
+                <span>Learn more</span>
+              </a>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-6 col-lg-4">
+            <div class="offer-card">
+              <img src="@/static/images/offer-kha-2.png" />
+              <h3>Large Organizations</h3>
+              <p>
+                We come through on demand across branches with bulk pricing.
+              </p>
+              <a href="" class="d-flex align-items-center mt-3 anchor">
+                <img src="@/static/images/icon/anchor.png" />
+                <span>Learn more</span>
+              </a>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-6 col-lg-4">
+            <div class="offer-card">
+              <img src="@/static/images/offer-kha-3.png" />
+              <h3>Start Up’s and SME’s</h3>
+              <p>
+                Since power is essential to a growing business, we have created
+                the best plans for you.
+              </p>
+              <a href="" class="d-flex align-items-center mt-3 anchor">
+                <img src="@/static/images/icon/anchor.png" />
+                <span>Learn more</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <Footer />
   </div>
 </template>
 
