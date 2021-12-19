@@ -119,7 +119,7 @@
           <button
             role="button"
             class="close-dialog"
-            @click="$bvModal.hide('bargain-response-dialog')"
+            @click="$bvModal.hide('order-response-dialogg')"
           >
             <img src="@/static/images/icon/close.png" />
             <span>Close</span>
