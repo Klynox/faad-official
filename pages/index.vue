@@ -3,7 +3,7 @@
     <Header />
     <div class="position-relative py-4 px-5 mt-4">
       <div class="container-fluid d-md-flex justify-content-between pt-4">
-        <a href="" class="btn call-to-action xdb">
+        <a href="" class="btn call-to-action xdb text-capitalize">
           <img src="@/static/images/icon/message-light.png" />Talk to someone
           now
         </a>
@@ -140,40 +140,46 @@
     </section>
     <section class="partnerhips">
       <div class="container">
-        <h2 class="text-center section-title">Powering Large and growing businesses across Nigeria</h2>
+        <h2 class="text-center section-title">
+          Powering Large and growing businesses across Nigeria
+        </h2>
         <p class="text-center section-para">
-          FAAD oil powers some of the largest establishments in the country and proudly supports growing businesses
+          FAAD oil powers some of the largest establishments in the country and
+          proudly supports growing businesses
         </p>
-        <VueSlickCarousel v-bind="slideSettings" class="text-center partners-slide">
+        <VueSlickCarousel
+          v-bind="slideSettings"
+          class="text-center partners-slide"
+        >
           <div class="d-flex justify-content-center align-items-center">
-            <img src="@/static/images/partners/slides/1.png"/>
+            <img src="@/static/images/partners/slides/1.png" />
           </div>
           <div class="d-flex justify-content-center align-items-center">
-            <img src="@/static/images/partners/slides/2.png"/>
+            <img src="@/static/images/partners/slides/2.png" />
           </div>
           <div class="d-flex justify-content-center align-items-center">
-            <img src="@/static/images/partners/slides/3.png"/>
+            <img src="@/static/images/partners/slides/3.png" />
           </div>
           <div class="d-flex justify-content-center align-items-center">
-            <img src="@/static/images/partners/slides/4.png"/>
+            <img src="@/static/images/partners/slides/4.png" />
           </div>
           <div class="d-flex justify-content-center align-items-center">
-            <img src="@/static/images/partners/slides/5.png"/>
+            <img src="@/static/images/partners/slides/5.png" />
           </div>
           <div class="d-flex justify-content-center align-items-center">
-            <img src="@/static/images/partners/slides/6.png"/>
+            <img src="@/static/images/partners/slides/6.png" />
           </div>
           <div class="d-flex justify-content-center align-items-center">
-            <img src="@/static/images/partners/slides/7.png"/>
+            <img src="@/static/images/partners/slides/7.png" />
           </div>
           <div class="d-flex justify-content-center align-items-center">
-            <img src="@/static/images/partners/slides/8.png"/>
+            <img src="@/static/images/partners/slides/8.png" />
           </div>
           <div class="d-flex justify-content-center align-items-center">
-            <img src="@/static/images/partners/slides/9.png"/>
+            <img src="@/static/images/partners/slides/9.png" />
           </div>
           <div class="d-flex justify-content-center align-items-center">
-            <img src="@/static/images/partners/slides/10.png"/>
+            <img src="@/static/images/partners/slides/10.png" />
           </div>
         </VueSlickCarousel>
       </div>
@@ -305,6 +311,7 @@ export default {
   border-radius: 0;
   color: #fff;
   padding: 0.7rem 1.79rem;
+  text-transform: uppercase;
 
   img {
     margin-right: 0.5rem;

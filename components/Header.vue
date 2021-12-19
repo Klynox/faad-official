@@ -31,6 +31,101 @@
           </b-navbar-nav>
         </b-collapse>
       </b-navbar>
+      <b-modal id="modal-1" hide-footer>
+        <template #modal-title>PLACE ORDER</template>
+        <div>
+          <b-form @submit.prevent="onSubmit" v-if="showForm">
+            <div class="form-group">
+              <div class="form-text label-text">Name</div>
+              <b-form-input
+                v-model="formData.name"
+                type="text"
+                placeholder="John Jane"
+                required
+              ></b-form-input>
+            </div>
+
+            <div class="form-group">
+              <div class="form-text label-text">Email</div>
+              <b-form-input
+                v-model="formData.email"
+                type="email"
+                placeholder="Johnjane@xmail.com"
+                required
+              ></b-form-input>
+            </div>
+
+            <div class="form-group">
+              <div class="form-text label-text">Phone</div>
+              <b-form-input
+                v-model="formData.phone"
+                type="tel"
+                placeholder="+23411221122"
+                required
+              ></b-form-input>
+            </div>
+
+            <div class="form-group">
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-text label-text">Fuel</div>
+                  <b-form-select
+                    v-model="formData.fuel"
+                    :options="fuels"
+                    required
+                  ></b-form-select>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-text label-text">Litres</div>
+                  <b-form-select
+                    v-model="formData.litres"
+                    :options="litres"
+                    required
+                  ></b-form-select>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="form-text label-text">Address</div>
+              <b-form-input
+                v-model="formData.address"
+                type="text"
+                placeholder="1, kiko cresent, Gra, PHC"
+                required
+              ></b-form-input>
+            </div>
+
+            <div class="d-flex justify-content-center mt-5">
+              <b-button type="submit" class="call-to-action"
+                >send bargain</b-button
+              >
+            </div>
+          </b-form>
+        </div>
+      </b-modal>
+      <b-modal id="order-response-dialog" hide-footer hide-header>
+        <div class="container text-center">
+          <img src="@/static/images/icon/tick.png" class="marker-img" />
+          <p class="dialog-para">
+            Thank you for your order.  One of our agents will be in touch with you ASAP, if you’d like to get a more immediate response please dial or click to call
+          </p>
+          <a href="tel:+234700FAADOIL" class="btn btn-link active-contact"
+            >0700FAADOIL</a
+          >
+          <a href="tel:+2347003223645" class="btn btn-link active-contact"
+            >07003223645</a
+          >
+          <button
+            role="button"
+            class="close-dialog"
+            @click="$bvModal.hide('bargain-response-dialog')"
+          >
+            <img src="@/static/images/icon/close.png" />
+            <span>Close</span>
+          </button>
+        </div>
+      </b-modal>
       <div class="container">
         <div class="row">
           <div class="col-md-6">
@@ -40,25 +135,72 @@
                 FAAD runs a 24/7 fuel supply and procurement service to over 200
                 offices, homes, schools and events.
               </p>
-              <a href="#" class="btn call-to-action">Place order</a>
+              <button v-b-modal.modal-1 class="btn call-to-action">
+                Place order
+              </button>
             </div>
           </div>
         </div>
         <img src="@/static/images/tanker.svg" class="img-tanker" />
         <div class="partners">
           <div class="partners-images">
-            <img src="@/static/images/partners/1.png"/>
-            <img src="@/static/images/partners/2.png"/>
-            <img src="@/static/images/partners/3.png"/>
-            <img src="@/static/images/partners/4.png"/>
-            <img src="@/static/images/partners/5.png"/>
+            <img src="@/static/images/partners/1.png" />
+            <img src="@/static/images/partners/2.png" />
+            <img src="@/static/images/partners/3.png" />
+            <img src="@/static/images/partners/4.png" />
+            <img src="@/static/images/partners/5.png" />
           </div>
         </div>
       </div>
     </div>
   </div>
 </template>
-
+<script>
+export default {
+  data() {
+    return {
+      showForm: true,
+      litres: [
+        { text: "Please select", value: null },
+        "20",
+        "80",
+        "200",
+        "400",
+      ],
+      fuels: ["AGO", "PMS", "KPK"],
+      formData: {
+        name: null,
+        email: null,
+        phone: null,
+        fuel: "AGO",
+        litres: null,
+        address: null,
+      },
+    };
+  },
+  methods: {
+    isFormValid() {
+      return (
+        this.formData.name != null &&
+        this.formData.name.trim() != "" &&
+        this.formData.email != null &&
+        this.formData.email.trim() != "" &&
+        this.formData.fuel != null &&
+        this.formData.fuel.trim() != "" &&
+        this.formData.litres != null &&
+        this.formData.litres.trim() != "" &&
+        this.formData.address != null &&
+        this.formData.address.trim() != "" &&
+        this.formData.phone != null &&
+        this.formData.phone.trim() != ""
+      );
+    },
+    async onSubmit(event) {
+      if (!this.isFormValid()) return;
+    },
+  },
+};
+</script>
 <style lang="scss">
 .header {
   position: relative;
@@ -155,6 +297,7 @@
     border-radius: 0;
     color: #fff;
     padding: 0.7rem 1.79rem;
+    text-transform: uppercase;
   }
 }
 .img-tanker {

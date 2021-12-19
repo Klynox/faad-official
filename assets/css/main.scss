@@ -168,3 +168,89 @@ footer {
     }
   }
 }
+.modal-content {
+  border-radius: 0;
+  background: #e5e5e5;
+}
+.modal-header {
+  border: 0;
+  padding: 2.6rem 1.8rem;
+  padding-bottom: 0;
+}
+.modal-body {
+  padding: 1.89rem 1.8rem;
+  padding-bottom: 2.6rem;
+}
+.form-control {
+  background: #ffffff;
+  border: 1px solid #8b8c89;
+  font-weight: 500;
+  font-size: 0.8rem;
+  line-height: 1.2rem;
+  color: rgba(#8b8c89, 0.4);
+  border-radius: 0;
+  padding: 0.77rem 1rem;
+  height: initial;
+}
+.form-control:disabled,
+.form-control[readonly] {
+  background-color: #65656c;
+  font-weight: 500;
+  font-size: 0.8rem;
+  line-height: 1.2rem;
+  color: #ffffff;
+}
+.custom-select {
+  border-radius: 0;
+  padding: 0.77rem 1rem;
+  height: initial;
+  font-weight: 500;
+  font-size: 0.8rem;
+  line-height: 1.2rem;
+  color: rgba(#8b8c89, 0.6);
+  border: 1px solid #8b8c89;
+}
+.label-text {
+  font-size: 0.809rem;
+  line-height: 1.19rem;
+  color: #1d1d26;
+}
+.marker-img {
+  width: 4.06rem;
+  height: 4.06rem;
+  margin-bottom: 1.5rem;
+}
+.dialog-para {
+  font-weight: 500;
+  font-size: 0.909rem;
+  line-height: 1.19rem;
+  text-align: center;
+  color: #65656c;
+}
+.active-contact {
+  display: block;
+  font-size: 0.909rem;
+  line-height: 1.19rem;
+  text-align: center;
+  text-decoration-line: underline;
+  color: #000000;
+  &:hover {
+    color: #111111;
+  }
+}
+.close-dialog {
+  margin-top: 1.7rem;
+  outline: none;
+  border: 0;
+  background: transparent;
+  font-weight: 500;
+  font-size: 0.98rem;
+  line-height: 1.2rem;
+  color: #65656c;
+
+  img {
+    margin-right: 0.16rem;
+    height: 16px;
+    width: 16px;
+  }
+}
