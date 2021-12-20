@@ -10,6 +10,7 @@
               v-model="formData.name"
               type="text"
               placeholder="John Jane"
+              :disabled="isLoading"
               required
             ></b-form-input>
           </div>
@@ -20,6 +21,7 @@
               v-model="formData.email"
               type="email"
               placeholder="Johnjane@xmail.com"
+              :disabled="isLoading"
               required
             ></b-form-input>
           </div>
@@ -30,6 +32,7 @@
               v-model="formData.phone"
               type="tel"
               placeholder="+23411221122"
+              :disabled="isLoading"
               required
             ></b-form-input>
           </div>
@@ -41,6 +44,7 @@
                 <b-form-select
                   v-model="formData.fuel"
                   :options="fuels"
+                  :disabled="isLoading"
                   required
                 ></b-form-select>
               </div>
@@ -49,6 +53,7 @@
                 <b-form-select
                   v-model="formData.litres"
                   :options="litres"
+                  :disabled="isLoading"
                   required
                 ></b-form-select>
               </div>
@@ -70,6 +75,7 @@
                 <b-form-select
                   v-model="formData.biddingPrice"
                   :options="biddingPrices"
+                  :disabled="isLoading"
                   required
                 ></b-form-select>
               </div>
@@ -82,13 +88,28 @@
               v-model="formData.address"
               type="text"
               placeholder="1, kiko cresent, Gra, PHC"
+              :disabled="isLoading"
               required
             ></b-form-input>
           </div>
 
+          <b-alert
+            :show="dismissCountDown"
+            dismissible
+            variant="warning"
+            @dismissed="dismissCountDown = 0"
+            @dismiss-count-down="countDownChanged"
+          >
+            <p>
+              {{ errorMsg }}
+            </p>
+          </b-alert>
           <div class="d-flex justify-content-center mt-5">
-            <b-button type="submit" class="call-to-action"
+            <b-button type="submit" class="call-to-action" v-if="!isLoading"
               >send bargain</b-button
+            >
+            <b-button type="submit" class="call-to-action" v-else
+              >loading...</b-button
             >
           </div>
         </b-form>
@@ -96,16 +117,26 @@
     </b-modal>
     <b-modal id="bargain-response-dialog" hide-footer hide-header>
       <div class="container text-center">
-        <img src="@/static/images/icon/tick.png" class="marker-img"/>
+        <img src="@/static/images/icon/tick.png" class="marker-img" />
         <p class="dialog-para">
-          We got your bargain. One of our agents will be in touch with you ASAP, if you’d like to get a more immediate response please dial or click to call
+          We got your bargain. One of our agents will be in touch with you ASAP,
+          if you’d like to get a more immediate response please dial or click to
+          call
         </p>
-        <a href="tel:+234700FAADOIL" class="btn btn-link active-contact">0700FAADOIL</a>
-        <a href="tel:+2347003223645" class="btn btn-link active-contact">07003223645</a>
-        <button role="button" class="close-dialog" @click="$bvModal.hide('bargain-response-dialog')">
-          <img src="@/static/images/icon/close.png"/>
+        <a href="tel:+234700FAADOIL" class="btn btn-link active-contact"
+          >0700FAADOIL</a
+        >
+        <a href="tel:+2347003223645" class="btn btn-link active-contact"
+          >07003223645</a
+        >
+        <button
+          role="button"
+          class="close-dialog"
+          @click="$bvModal.hide('bargain-response-dialog')"
+        >
+          <img src="@/static/images/icon/close.png" />
           <span>Close</span>
-          </button>
+        </button>
       </div>
     </b-modal>
     <div class="stats-wrapper" v-if="showStats">
@@ -139,7 +170,9 @@
           <div class="stat-price">N{{ stats.kerosen.amount }}</div>
         </div>
         <div class="d-none d-sm-flex align-items-center flex-column">
-          <button v-b-modal.bargain-dialog class="btn call-to-action">Bargain</button>
+          <button v-b-modal.bargain-dialog class="btn call-to-action">
+            Bargain
+          </button>
         </div>
       </div>
       <div class="d-flex d-sm-none justify-content-center mt-3">
@@ -175,20 +208,20 @@ export default {
         "N200,00",
         "N400,00",
       ],
-      fuels: [
-        "AGO",
-        "PMS",
-        "KPK",
-      ],
+      fuels: ["AGO", "PMS", "KPK"],
+      isLoading: false,
+      errorMsg: null,
+      dismissSecs: 10,
+      dismissCountDown: 0,
       formData: {
         name: null,
         email: null,
         phone: null,
-        fuel: 'AGO',
+        fuel: "AGO",
         litres: null,
         address: null,
-        askingPrice: 'N350.77 / litre',
-        biddingPrice: null
+        askingPrice: "N350.77 / litre",
+        biddingPrice: null,
       },
     };
   },
@@ -205,29 +238,60 @@ export default {
     },
   },
   methods: {
+    countDownChanged(dismissCountDown) {
+      this.dismissCountDown = dismissCountDown;
+    },
+    showAlert() {
+      this.dismissCountDown = this.dismissSecs;
+    },
     isFormValid() {
       return (
         this.formData.name != null &&
-        this.formData.name.trim() != '' &&
+        this.formData.name.trim() != "" &&
         this.formData.email != null &&
-        this.formData.email.trim() != '' &&
+        this.formData.email.trim() != "" &&
         this.formData.fuel != null &&
-        this.formData.fuel.trim() != '' &&
+        this.formData.fuel.trim() != "" &&
         this.formData.litres != null &&
-        this.formData.litres.trim() != '' &&
+        this.formData.litres.trim() != "" &&
         this.formData.address != null &&
-        this.formData.address.trim() != '' &&
+        this.formData.address.trim() != "" &&
         this.formData.phone != null &&
-        this.formData.phone.trim() != '' &&
+        this.formData.phone.trim() != "" &&
         this.formData.biddingPrice != null &&
-        this.formData.biddingPrice.trim() != '' &&
+        this.formData.biddingPrice.trim() != "" &&
         this.formData.askingPrice != null &&
-        this.formData.askingPrice.trim() != ''
+        this.formData.askingPrice.trim() != ""
       );
     },
+    clearForm() {
+      this.errorMsg = null;
+      this.isLoading = false;
+      this.formData.name = null;
+      this.formData.email = null;
+      this.formData.fuel = null;
+      this.formData.litres = null;
+      this.formData.address = null;
+      this.formData.phone = null;
+      this.formData.biddingPrice = null;
+      this.formData.askingPrice = null;
+    },
     async onSubmit(event) {
+      this.errorMsg = null;
       if (!this.isFormValid()) return;
-      this.$bvModal.show('bargain-response-dialog')
+      this.isLoading = true;
+      try {
+        await this.$axios.post(`/faad-place-order`, this.formData);
+        this.clearForm();
+        this.$bvModal.hide("bargain-dialog");
+        this.$bvModal.show("bargain-response-dialog");
+      } catch (err) {
+        console.log(err);
+        this.isLoading = false;
+        this.errorMsg =
+          "Request failed. Please, check your internet connection and try again.";
+        this.showAlert();
+      }
     },
     valueColor: function (value) {
       return value < 0 ? "red" : "green";

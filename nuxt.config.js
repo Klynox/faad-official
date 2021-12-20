@@ -45,7 +45,25 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/bootstrap
     'bootstrap-vue/nuxt',
+    '@nuxtjs/axios',
   ],
+
+  axios: {
+    baseURL: 'https://pure-dawn-47319.herokuapp.com',
+    // proxy: true
+  },
+
+  publicRuntimeConfig: {
+    axios: {
+      browserBaseURL: process.env.BROWSER_BASE_URL
+    }
+  },
+
+  privateRuntimeConfig: {
+    axios: {
+      baseURL: process.env.BASE_URL
+    }
+  },
 
   vendor: [
     'firebase'
