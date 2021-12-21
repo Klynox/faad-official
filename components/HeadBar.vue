@@ -19,6 +19,10 @@
 .tel-xnsh {
   margin-left: 2.25rem;
 
+  a {
+    color: #fff;
+  }
+
   img {
     width: 16px;
     height: 16px;
