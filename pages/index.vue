@@ -9,6 +9,9 @@
     <section class="about">
       <div class="container">
         <div class="row justify-content-between">
+          <div class="col-md-5 d-md-none">
+            <img src="@/static/images/about-1.png" class="card-imag-xjsjl" />
+          </div>
           <div class="col-md-5">
             <h2 class="section-title">Quality, speed and service</h2>
             <p class="section-para">
@@ -24,7 +27,7 @@
               need.
             </p>
           </div>
-          <div class="col-md-5">
+          <div class="col-md-5 d-none d-md-block">
             <img src="@/static/images/about-1.png" class="card-imag-xjsjl" />
           </div>
         </div>
@@ -62,6 +65,9 @@
       <div class="container">
         <div class="row justify-content-between">
           <div class="col-md-5">
+            <img src="@/static/images/process.png" class="card-imag-xjsjl" />
+          </div>
+          <div class="col-md-5 d-md-none">
             <h2 class="section-title">Seamless process from end to end</h2>
             <p class="section-para">
               From enquiry to delivery, there’s no stress on you. We are
@@ -69,7 +75,7 @@
             </p>
             <img src="@/static/images/process-flow.svg" class="flow-tsh" />
           </div>
-          <div class="col-md-5">
+          <div class="col-md-5 d-none d-md-block">
             <img src="@/static/images/process.png" class="card-imag-xjsjl" />
           </div>
         </div>
@@ -381,7 +387,7 @@ export default {
     padding: 20px 27px;
   }
   .xdb {
-    margin-top: 8rem;
+    margin-top: 1.7rem;
   }
 }
 </style>
