@@ -289,6 +289,7 @@ export default {
     font-size: 1rem;
     font-weight: 600;
     margin-top: 1.2rem;
+    margin-bottom: 1.2rem;
   }
 
   .call-to-action {
@@ -298,6 +299,9 @@ export default {
     color: #fff;
     padding: 0.7rem 1.79rem;
     text-transform: uppercase;
+    &:hover {
+      background: darken(#f58634, 11%);
+    }
   }
 }
 .img-tanker {
