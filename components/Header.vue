@@ -227,7 +227,7 @@ export default {
   }
   .partners {
     position: absolute;
-    bottom: 3rem;
+    bottom: 4rem;
 
     .partners-images {
       display: inline-block;

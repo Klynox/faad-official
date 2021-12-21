@@ -328,7 +328,7 @@ export default {
   width: 95%;
   max-width: 33.25rem;
   min-height: 8rem;
-  top: -2rem;
+  top: -4.7rem;
 
   h5 {
     font-weight: 300;
@@ -339,7 +339,7 @@ export default {
 
   .stat-title {
     font-weight: 500;
-    font-size: 10px;
+    font-size: 12px;
     line-height: 16px;
     color: #1a1a1a;
   }
