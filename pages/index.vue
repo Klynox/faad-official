@@ -64,10 +64,10 @@
     <section class="process-dhl">
       <div class="container">
         <div class="row justify-content-between">
-          <div class="col-md-5">
+          <div class="col-md-5 d-md-none">
             <img src="@/static/images/process.png" class="card-imag-xjsjl" />
           </div>
-          <div class="col-md-5 d-md-none">
+          <div class="col-md-5">
             <h2 class="section-title">Seamless process from end to end</h2>
             <p class="section-para">
               From enquiry to delivery, there’s no stress on you. We are
