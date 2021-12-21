@@ -2,11 +2,7 @@
   <div>
     <Header />
     <div class="position-relative py-4 px-5 mt-4">
-      <div class="container-fluid d-md-flex justify-content-between pt-4">
-        <a href="" class="btn call-to-action xdb text-capitalize">
-          <img src="@/static/images/icon/message-light.png" />Talk to someone
-          now
-        </a>
+      <div class="container-fluid d-md-flex justify-content-between pt-4 xdb">
         <Stats />
       </div>
     </div>
@@ -372,6 +368,11 @@ export default {
     color: #f58634;
     text-align: center;
     text-transform: uppercase;
+
+    &:hover {
+      background-color: #f58634;
+      color: #fff;
+    }
   }
 }
 @media (max-width: 880px) {
@@ -379,7 +380,7 @@ export default {
     left: 2%;
     padding: 20px 27px;
   }
-  .call-to-action.xdb {
+  .xdb {
     margin-top: 8rem;
   }
 }
