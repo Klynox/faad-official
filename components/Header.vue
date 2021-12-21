@@ -3,8 +3,9 @@
     <HeadBar />
     <div class="header">
       <div class="overlay"></div>
+      <div class="bottom-lap"></div>
       <b-navbar class="menu-bar" toggleable="md" type="light">
-        <b-navbar-brand href="#">
+        <b-navbar-brand href="/">
           <img class="logo" src="@/static/images/logo.png" />
         </b-navbar-brand>
 
@@ -205,7 +206,7 @@ export default {
 .header {
   position: relative;
   background: #aaafaf;
-  min-height: 48rem;
+  min-height: 42rem;
   background-image: url("/images/bg.png");
   background-size: cover;
   .overlay {
@@ -216,15 +217,26 @@ export default {
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
   }
+  .bottom-lap {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 250px;
+    background: linear-gradient(180deg, rgba(26, 26, 26, 0) 0%, #1A1A1A 59.17%);
+  }
   .partners {
     position: absolute;
     bottom: 3rem;
 
     .partners-images {
       display: inline-block;
+      img {
+        max-width: 120px;
+      }
     }
     .partners-images img + img {
-      margin-left: 1.5rem;
+      margin-left: 1.3rem;
     }
   }
 }
@@ -308,7 +320,7 @@ export default {
   max-height: 20.1rem;
   position: absolute;
   right: 0rem;
-  bottom: 11rem;
+  bottom: 7rem;
 }
 @media (max-width: 950px) {
   .img-tanker {
