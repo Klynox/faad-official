@@ -1,8 +1,8 @@
 <template>
-  <div class="d-flex align-items-center justify-content-center headbar">
+  <div class="d-flex flex-column flex-sm-row align-items-center justify-content-center headbar">
     <div class="">24/7 Emergency Fuel Supply</div>
     <div class="tel-xnsh">
-      <img src="@/static/images/icon/tel.png" />0700FAADOIL | 07003223645
+      <img src="@/static/images/icon/tel.png" /> <a href="tel:+234700FAADOIL">0700FAADOIL</a> | <a href="tel:+23407003223645">07003223645</a>
     </div>
   </div>
 </template>

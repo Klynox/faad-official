@@ -274,7 +274,6 @@ export default {
       this.formData.address = null;
       this.formData.phone = null;
       this.formData.biddingPrice = null;
-      this.formData.askingPrice = null;
     },
     async onSubmit(event) {
       this.errorMsg = null;

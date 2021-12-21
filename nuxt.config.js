@@ -50,7 +50,7 @@ export default {
 
   axios: {
     baseURL: 'https://pure-dawn-47319.herokuapp.com',
-    // proxy: true
+    proxy: true
   },
 
   publicRuntimeConfig: {
