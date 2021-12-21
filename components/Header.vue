@@ -42,6 +42,7 @@
                 v-model="formData.name"
                 type="text"
                 placeholder="John Jane"
+                :disabled="isLoading"
                 required
               ></b-form-input>
             </div>
@@ -52,6 +53,7 @@
                 v-model="formData.email"
                 type="email"
                 placeholder="Johnjane@xmail.com"
+                :disabled="isLoading"
                 required
               ></b-form-input>
             </div>
@@ -62,6 +64,7 @@
                 v-model="formData.phone"
                 type="tel"
                 placeholder="+23411221122"
+                :disabled="isLoading"
                 required
               ></b-form-input>
             </div>
@@ -73,6 +76,7 @@
                   <b-form-select
                     v-model="formData.fuel"
                     :options="fuels"
+                    :disabled="isLoading"
                     required
                   ></b-form-select>
                 </div>
@@ -81,6 +85,7 @@
                   <b-form-select
                     v-model="formData.litres"
                     :options="litres"
+                    :disabled="isLoading"
                     required
                   ></b-form-select>
                 </div>
@@ -92,14 +97,29 @@
               <b-form-input
                 v-model="formData.address"
                 type="text"
-                placeholder="1, kiko cresent, Gra, PHC"
+                placeholder="Enter Address"
+                :disabled="isLoading"
                 required
               ></b-form-input>
             </div>
 
+            <b-alert
+              :show="dismissCountDown"
+              dismissible
+              variant="warning"
+              @dismissed="dismissCountDown = 0"
+              @dismiss-count-down="countDownChanged"
+            >
+              <p>
+                {{ errorMsg }}
+              </p>
+            </b-alert>
             <div class="d-flex justify-content-center mt-5">
-              <b-button type="submit" class="call-to-action"
+              <b-button type="submit" class="call-to-action" v-if="!isLoading"
                 >send bargain</b-button
+              >
+              <b-button type="submit" class="call-to-action" v-else
+                >loading...</b-button
               >
             </div>
           </b-form>
@@ -109,7 +129,9 @@
         <div class="container text-center">
           <img src="@/static/images/icon/tick.png" class="marker-img" />
           <p class="dialog-para">
-            Thank you for your order.  One of our agents will be in touch with you ASAP, if you’d like to get a more immediate response please dial or click to call
+            Thank you for your order. One of our agents will be in touch with
+            you ASAP, if you’d like to get a more immediate response please dial
+            or click to call
           </p>
           <a href="tel:+234700FAADOIL" class="btn btn-link active-contact"
             >0700FAADOIL</a
@@ -120,7 +142,7 @@
           <button
             role="button"
             class="close-dialog"
-            @click="$bvModal.hide('order-response-dialogg')"
+            @click="$bvModal.hide('order-response-dialog')"
           >
             <img src="@/static/images/icon/close.png" />
             <span>Close</span>
@@ -163,12 +185,24 @@ export default {
       showForm: true,
       litres: [
         { text: "Please select", value: null },
-        "20",
-        "80",
-        "200",
-        "400",
+        "500-999",
+        "1,000-1,999",
+        "2,000-2,300",
+        "2,301-3,999",
+        "4,000-5,999",
+        "6,000-7,999",
+        "8,000-9,999",
+        "10,000-14,999",
+        "15,000-19,999",
+        "20,000-24,999",
+        "25,000-35,999",
+        "36,000+",
       ],
       fuels: ["AGO", "PMS", "KPK"],
+      isLoading: false,
+      errorMsg: null,
+      dismissSecs: 10,
+      dismissCountDown: 0,
       formData: {
         name: null,
         email: null,
@@ -180,6 +214,12 @@ export default {
     };
   },
   methods: {
+    countDownChanged(dismissCountDown) {
+      this.dismissCountDown = dismissCountDown;
+    },
+    showAlert() {
+      this.dismissCountDown = this.dismissSecs;
+    },
     isFormValid() {
       return (
         this.formData.name != null &&
@@ -196,8 +236,31 @@ export default {
         this.formData.phone.trim() != ""
       );
     },
+    clearForm() {
+      this.errorMsg = null;
+      this.isLoading = false;
+      this.formData.name = null;
+      this.formData.email = null;
+      this.formData.fuel = null;
+      this.formData.litres = null;
+      this.formData.address = null;
+      this.formData.phone = null;
+    },
     async onSubmit(event) {
+      this.errorMsg = null;
       if (!this.isFormValid()) return;
+      this.isLoading = true;
+      try {
+        await this.$axios.post(`https://pure-dawn-47319.herokuapp.com/faad-place-order`, this.formData);
+        this.clearForm();
+        this.$bvModal.hide("modal-1");
+        this.$bvModal.show("order-response-dialog");
+      } catch (err) {
+        this.isLoading = false;
+        this.errorMsg =
+          "Request failed. Please, check your internet connection and try again.";
+        this.showAlert();
+      }
     },
   },
 };
@@ -223,7 +286,7 @@ export default {
     left: 0;
     width: 100%;
     height: 250px;
-    background: linear-gradient(180deg, rgba(26, 26, 26, 0) 0%, #1A1A1A 59.17%);
+    background: linear-gradient(180deg, rgba(26, 26, 26, 0) 0%, #1a1a1a 59.17%);
   }
   .partners {
     position: absolute;

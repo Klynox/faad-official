@@ -274,9 +274,10 @@ export default {
         dots: false,
         arrows: false,
         autoplay: true,
+        autoplaySpeed: 1000,
         infinite: true,
         slidesToShow: 6,
-        slidesToScroll: 1,
+        slidesToScroll: 2,
         responsive: [
           {
             breakpoint: 1200,

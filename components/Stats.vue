@@ -87,7 +87,7 @@
             <b-form-input
               v-model="formData.address"
               type="text"
-              placeholder="1, kiko cresent, Gra, PHC"
+              placeholder="Enter Address"
               :disabled="isLoading"
               required
             ></b-form-input>
@@ -196,10 +196,18 @@ export default {
       showForm: true,
       litres: [
         { text: "Please select", value: null },
-        "20",
-        "80",
-        "200",
-        "400",
+        "500-999",
+        "1,000-1,999",
+        "2,000-2,300",
+        "2,301-3,999",
+        "4,000-5,999",
+        "6,000-7,999",
+        "8,000-9,999",
+        "10,000-14,999",
+        "15,000-19,999",
+        "20,000-24,999",
+        "25,000-35,999",
+        "36,000+",
       ],
       biddingPrices: [
         { text: "Please select", value: null },
@@ -280,7 +288,7 @@ export default {
       if (!this.isFormValid()) return;
       this.isLoading = true;
       try {
-        await this.$axios.post(`/faad-place-order`, this.formData);
+        await this.$axios.post(`/faad-bargain`, this.formData);
         this.clearForm();
         this.$bvModal.hide("bargain-dialog");
         this.$bvModal.show("bargain-response-dialog");
