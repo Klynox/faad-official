@@ -9,7 +9,7 @@
             <b-form-input
               v-model="formData.name"
               type="text"
-              placeholder="John Jane"
+              placeholder="Enter Your name"
               :disabled="isLoading"
               required
             ></b-form-input>
@@ -20,7 +20,7 @@
             <b-form-input
               v-model="formData.email"
               type="email"
-              placeholder="Johnjane@xmail.com"
+              placeholder="Enter your email address"
               :disabled="isLoading"
               required
             ></b-form-input>
@@ -31,7 +31,7 @@
             <b-form-input
               v-model="formData.phone"
               type="tel"
-              placeholder="+23411221122"
+              placeholder="Enter phone number"
               :disabled="isLoading"
               required
             ></b-form-input>
@@ -196,6 +196,7 @@ export default {
       showForm: true,
       litres: [
         { text: "Please select", value: null },
+        "less than 500",
         "500-999",
         "1,000-1,999",
         "2,000-2,300",
