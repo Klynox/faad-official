@@ -22,6 +22,20 @@
     <Footer />
   </div>
 </template>
+<script>
+export default {
+  head: {
+    title: 'About FAAD Oil LTD',
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'All about what we offer'
+      }
+    ],
+  }
+}
+</script>
 <style lang="scss" scoped>
 .about-main {
   margin-top: 2rem;
