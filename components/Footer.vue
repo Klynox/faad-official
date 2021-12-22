@@ -7,15 +7,15 @@
           <div class="footer-info">
             11 Birabi Street, Rumuadaolu 500272, Port Harcourt
           </div>
-          <div class="footer-info">0700 322 3645</div>
+          <div class="footer-info"><a href="tel:+23407003223645">0700 322 3645</a></div>
           <div class="socials">
-            <a href="">
+            <a href="https://www.linkedin.com/in/faad-procurements-9547b21a9/" target="_blank">
               <img src="@/static/images/social-1.png" />
             </a>
-            <a href="">
+            <a href="https://www.instagram.com/faadoil/" target="_blank">
               <img src="@/static/images/social-2.png" />
             </a>
-            <a href="">
+            <a href="https://web.facebook.com/faadprocurement" target="_blank">
               <img src="@/static/images/social-3.png" />
             </a>
           </div>
