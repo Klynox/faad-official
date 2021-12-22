@@ -96,8 +96,8 @@
           class="row mt-3 justify-content-between"
           style="margin-left: 0; margin-right: 0"
         >
-          <div class="col-sm-6 col-md-6 col-lg-4 d-flex flex-column">
-            <div class="offer-card">
+          <div class="col-sm-6 col-md-6 col-lg-4">
+            <div class="offer-card d-flex flex-column">
               <img src="@/static/images/offer-kha-1.png" />
               <h3>Partners Subscription</h3>
               <p>
@@ -111,7 +111,7 @@
             </div>
           </div>
           <div class="col-sm-6 col-md-6 col-lg-4">
-            <div class="offer-card">
+            <div class="offer-card d-flex flex-column">
               <img src="@/static/images/offer-kha-2.png" />
               <h3>Large Organizations</h3>
               <p>
@@ -124,7 +124,7 @@
             </div>
           </div>
           <div class="col-sm-6 col-md-6 col-lg-4">
-            <div class="offer-card">
+            <div class="offer-card d-flex flex-column">
               <img src="@/static/images/offer-kha-3.png" />
               <h3>Start Up’s and SME’s</h3>
               <p>
