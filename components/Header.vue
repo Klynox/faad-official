@@ -13,12 +13,9 @@
 
         <b-collapse id="nav-collapse" is-nav>
           <b-navbar-nav class="ml-auto">
-            <b-nav-item-dropdown text="Products" right>
-              <b-dropdown-item href="#">EN</b-dropdown-item>
-              <b-dropdown-item href="#">ES</b-dropdown-item>
-              <b-dropdown-item href="#">RU</b-dropdown-item>
-              <b-dropdown-item href="#">FA</b-dropdown-item>
-            </b-nav-item-dropdown>
+            <li class="nav-item">
+              <nuxt-link class="nav-link" to="/products">Products</nuxt-link>
+            </li>
 
             <li class="nav-item">
               <nuxt-link class="nav-link" to="/about">About</nuxt-link>
@@ -167,7 +164,10 @@
           <div class="partners-images">
             <img src="@/static/images/partners/1.png" />
             <img src="@/static/images/partners/2.png" />
-            <img src="@/static/images/partners/3.png" />
+            <img
+              src="@/static/images/partners/3.png"
+              class="d-none d-sm-inline-block"
+            />
             <img src="@/static/images/partners/4.png" />
             <img src="@/static/images/partners/5.png" />
           </div>
@@ -296,7 +296,8 @@ export default {
     .partners-images {
       display: inline-block;
       img {
-        max-width: 120px;
+        max-width: 100px;
+        max-height: 25px;
       }
     }
     .partners-images img + img {
@@ -331,16 +332,7 @@ export default {
 .dropdown-toggle::after {
   vertical-align: middle;
 }
-@media (max-width: 767px) {
-  .header {
-    min-height: 67vh;
-  }
 
-  .partners {
-    position: relative !important;
-    margin-top: 8rem;
-  }
-}
 @media (min-width: 768px) {
   .nav-item + .nav-item {
     margin-left: 2rem;
@@ -365,7 +357,7 @@ export default {
     font-size: 1rem;
     font-weight: 600;
     margin-top: 1.2rem;
-    margin-bottom: 1.2rem;
+    margin-bottom: 1.8rem;
   }
 
   .call-to-action {
@@ -384,11 +376,39 @@ export default {
   max-height: 20.1rem;
   position: absolute;
   right: 0rem;
-  bottom: 7rem;
+  bottom: 6.6rem;
 }
 @media (max-width: 950px) {
   .img-tanker {
     display: none;
+  }
+}
+@media (max-width: 767px) {
+  .header {
+    min-height: 37vh;
+  }
+
+  .partners {
+    position: relative !important;
+    margin-top: 7rem;
+  }
+
+  .header-caption {
+    margin-top: 30px;
+
+    h1 {
+      font-size: 1.9rem;
+    }
+    p {
+      line-height: 1.5;
+      letter-spacing: -0.01em;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .call-to-action {
+      padding: 0.6rem 1.59rem;
+    }
   }
 }
 </style>
