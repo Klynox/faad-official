@@ -48,6 +48,13 @@
   color: #fff;
   font-size: 0.875rem;
   line-height: 1.1rem;
+
+  a {
+    color: #fff;
+    &:hover {
+      color: darken(#fff, 25%);
+    }
+  }
 }
 .footer-info + .footer-info {
   margin-top: 0.3rem;
