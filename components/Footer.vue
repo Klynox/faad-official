@@ -25,11 +25,9 @@
             <li class="nav-item">
               <nuxt-link class="nav-link" to="/about">About</nuxt-link>
             </li>
-            <b-nav-item>Products</b-nav-item>
-            <b-nav-item
-              >Talk to someone
-              <img src="@/static/images/icon/support-light.png"
-            /></b-nav-item>
+            <li class="nav-item">
+              <nuxt-link class="nav-link" to="/products">Products</nuxt-link>
+            </li>
           </b-nav>
         </div>
       </div>
