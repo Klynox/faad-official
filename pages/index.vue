@@ -321,7 +321,7 @@ export default {
   }
 }
 .stats-wrapper {
-  box-shadow: 11px 14px 13px 9px rgba(#f58634, 0.2);
+  box-shadow: 11px 14px 13px 9px rgba(#f58634, 0.1);
   display: inline-block;
   padding: 20px 38px;
   background: #fff;
