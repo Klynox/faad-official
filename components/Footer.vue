@@ -22,7 +22,9 @@
         </div>
         <div class="col-md-6">
           <b-nav>
-            <b-nav-item>About</b-nav-item>
+            <li class="nav-item">
+              <nuxt-link class="nav-link" to="/about">About</nuxt-link>
+            </li>
             <b-nav-item>Products</b-nav-item>
             <b-nav-item
               >Talk to someone

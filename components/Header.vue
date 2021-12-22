@@ -20,11 +20,9 @@
               <b-dropdown-item href="#">FA</b-dropdown-item>
             </b-nav-item-dropdown>
 
-            <b-nav-item-dropdown right>
-              <template #button-content>About</template>
-              <b-dropdown-item href="#">Profile</b-dropdown-item>
-              <b-dropdown-item href="#">Sign Out</b-dropdown-item>
-            </b-nav-item-dropdown>
+            <li class="nav-item">
+              <nuxt-link class="nav-link" to="/about">About</nuxt-link>
+            </li>
             <b-nav-item href="#" class="support"
               >Talk to someone
               <img src="@/static/images/icon/support-light.png"
@@ -251,7 +249,10 @@ export default {
       if (!this.isFormValid()) return;
       this.isLoading = true;
       try {
-        await this.$axios.post(`https://pure-dawn-47319.herokuapp.com/faad-place-order`, this.formData);
+        await this.$axios.post(
+          `https://pure-dawn-47319.herokuapp.com/faad-place-order`,
+          this.formData
+        );
         this.clearForm();
         this.$bvModal.hide("modal-1");
         this.$bvModal.show("order-response-dialog");
@@ -269,7 +270,7 @@ export default {
 .header {
   position: relative;
   background: #aaafaf;
-  min-height: 42rem;
+  min-height: 40rem;
   background-image: url("/images/bg.png");
   background-size: cover;
   .overlay {
@@ -332,7 +333,7 @@ export default {
 }
 @media (max-width: 767px) {
   .header {
-    height: 100vh;
+    min-height: 67vh;
   }
 
   .partners {

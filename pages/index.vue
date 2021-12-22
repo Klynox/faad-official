@@ -104,10 +104,10 @@
                 We deliver the products you need monthly or regularly, with a
                 comfortable payment plan.
               </p>
-              <a href="" class="d-flex align-items-center mt-3 anchor">
+              <nuxt-link to="/learn-more" class="d-flex align-items-center mt-3 anchor">
                 <img src="@/static/images/icon/anchor.png" />
                 <span>Learn more</span>
-              </a>
+              </nuxt-link>
             </div>
           </div>
           <div class="col-sm-6 col-md-6 col-lg-4">
@@ -117,10 +117,10 @@
               <p>
                 We come through on demand across branches with bulk pricing.
               </p>
-              <a href="" class="d-flex align-items-center mt-3 anchor">
+              <nuxt-link to="/learn-more" class="d-flex align-items-center mt-3 anchor">
                 <img src="@/static/images/icon/anchor.png" />
                 <span>Learn more</span>
-              </a>
+              </nuxt-link>
             </div>
           </div>
           <div class="col-sm-6 col-md-6 col-lg-4">
@@ -131,10 +131,10 @@
                 Since power is essential to a growing business, we have created
                 the best plans for you.
               </p>
-              <a href="" class="d-flex align-items-center mt-3 anchor">
+              <nuxt-link to="/learn-more" class="d-flex align-items-center mt-3 anchor">
                 <img src="@/static/images/icon/anchor.png" />
                 <span>Learn more</span>
-              </a>
+              </nuxt-link>
             </div>
           </div>
         </div>
@@ -386,6 +386,7 @@ export default {
   .stats-wrapper {
     left: 2%;
     padding: 20px 27px;
+    top: -3rem;
   }
   .xdb {
     margin-top: 1.7rem;
