@@ -168,7 +168,7 @@
               src="@/static/images/partners/3.png"
               class="d-none d-sm-inline-block"
             />
-            <img src="@/static/images/partners/4.png" />
+            <img src="@/static/images/partners/4.png" class="nt-lastchild" />
             <img src="@/static/images/partners/5.png" />
           </div>
         </div>
@@ -296,6 +296,7 @@ export default {
 
     .partners-images {
       display: inline-block;
+
       img {
         max-width: 100px;
         max-height: 25px;
@@ -303,6 +304,16 @@ export default {
     }
     .partners-images img + img {
       margin-left: 1.3rem;
+    }
+  }
+}
+@media (max-width: 530px) {
+  img {
+    &.nt-lastchild {
+      margin-right: 1.3rem;
+    }
+    &:last-child {
+      margin-left: 0 !important;
     }
   }
 }
