@@ -20,7 +20,7 @@
             <li class="nav-item">
               <nuxt-link class="nav-link" to="/about">About</nuxt-link>
             </li>
-            <b-nav-item href="#" class="support"
+            <b-nav-item href="tel:+234700FAADOIL" class="support"
               >Talk to someone
               <img src="@/static/images/icon/support-light.png"
             /></b-nav-item>
