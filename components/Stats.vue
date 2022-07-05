@@ -6,56 +6,32 @@
         <b-form @submit.prevent="onSubmit" v-if="showForm">
           <div class="form-group">
             <div class="form-text label-text">Name</div>
-            <b-form-input
-              v-model="formData.name"
-              type="text"
-              placeholder="Enter Your name"
-              :disabled="isLoading"
-              required
-            ></b-form-input>
+            <b-form-input v-model="formData.name" type="text" placeholder="Enter Your name" :disabled="isLoading"
+              required></b-form-input>
           </div>
 
           <div class="form-group">
             <div class="form-text label-text">Email</div>
-            <b-form-input
-              v-model="formData.email"
-              type="email"
-              placeholder="Enter your email address"
-              :disabled="isLoading"
-              required
-            ></b-form-input>
+            <b-form-input v-model="formData.email" type="email" placeholder="Enter your email address"
+              :disabled="isLoading" required></b-form-input>
           </div>
 
           <div class="form-group">
             <div class="form-text label-text">Phone</div>
-            <b-form-input
-              v-model="formData.phone"
-              type="tel"
-              placeholder="Enter phone number"
-              :disabled="isLoading"
-              required
-            ></b-form-input>
+            <b-form-input v-model="formData.phone" type="tel" placeholder="Enter phone number" :disabled="isLoading"
+              required></b-form-input>
           </div>
 
           <div class="form-group">
             <div class="row">
               <div class="col-sm-6">
                 <div class="form-text label-text">Fuel</div>
-                <b-form-select
-                  v-model="formData.fuel"
-                  :options="fuels"
-                  :disabled="isLoading"
-                  required
-                ></b-form-select>
+                <b-form-select v-model="formData.fuel" :options="fuels" :disabled="isLoading" required></b-form-select>
               </div>
               <div class="col-sm-6">
                 <div class="form-text label-text">Litres</div>
-                <b-form-select
-                  v-model="formData.litres"
-                  :options="litres"
-                  :disabled="isLoading"
-                  required
-                ></b-form-select>
+                <b-form-select v-model="formData.litres" :options="litres" :disabled="isLoading" required>
+                </b-form-select>
               </div>
             </div>
           </div>
@@ -64,53 +40,31 @@
             <div class="row">
               <div class="col-sm-6">
                 <div class="form-text label-text">Asking price</div>
-                <b-form-input
-                  v-model="formData.askingPrice"
-                  type="text"
-                  disabled
-                ></b-form-input>
+                <b-form-input v-model="formData.askingPrice" type="text" disabled></b-form-input>
               </div>
               <div class="col-sm-6">
                 <div class="form-text label-text">Bidding price</div>
-                <b-form-select
-                  v-model="formData.biddingPrice"
-                  :options="biddingPrices"
-                  :disabled="isLoading"
-                  required
-                ></b-form-select>
+                <b-form-select v-model="formData.biddingPrice" :options="biddingPrices" :disabled="isLoading" required>
+                </b-form-select>
               </div>
             </div>
           </div>
 
           <div class="form-group">
             <div class="form-text label-text">Address</div>
-            <b-form-input
-              v-model="formData.address"
-              type="text"
-              placeholder="Enter Address"
-              :disabled="isLoading"
-              required
-            ></b-form-input>
+            <b-form-input v-model="formData.address" type="text" placeholder="Enter Address" :disabled="isLoading"
+              required></b-form-input>
           </div>
 
-          <b-alert
-            :show="dismissCountDown"
-            dismissible
-            variant="warning"
-            @dismissed="dismissCountDown = 0"
-            @dismiss-count-down="countDownChanged"
-          >
+          <b-alert :show="dismissCountDown" dismissible variant="warning" @dismissed="dismissCountDown = 0"
+            @dismiss-count-down="countDownChanged">
             <p>
               {{ errorMsg }}
             </p>
           </b-alert>
           <div class="d-flex justify-content-center mt-5">
-            <b-button type="submit" class="call-to-action" v-if="!isLoading"
-              >send bargain</b-button
-            >
-            <b-button type="submit" class="call-to-action" v-else
-              >loading...</b-button
-            >
+            <b-button type="submit" class="call-to-action" v-if="!isLoading">send bargain</b-button>
+            <b-button type="submit" class="call-to-action" v-else>loading...</b-button>
           </div>
         </b-form>
       </div>
@@ -123,17 +77,9 @@
           if you’d like to get a more immediate response please dial or click to
           call
         </p>
-        <a href="tel:+234700FAADOIL" class="btn btn-link active-contact"
-          >0700FAADOIL</a
-        >
-        <a href="tel:+2347003223645" class="btn btn-link active-contact"
-          >07003223645</a
-        >
-        <button
-          role="button"
-          class="close-dialog"
-          @click="$bvModal.hide('bargain-response-dialog')"
-        >
+        <a href="tel:+234700FAADOIL" class="btn btn-link active-contact">0700FAADOIL</a>
+        <a href="tel:+2347003223645" class="btn btn-link active-contact">07003223645</a>
+        <button role="button" class="close-dialog" @click="$bvModal.hide('bargain-response-dialog')">
           <img src="@/static/images/icon/close.png" />
           <span>Close</span>
         </button>
@@ -143,31 +89,32 @@
       <h5 class="text-muted">Trending today</h5>
       <div class="d-flex justify-content-between mt-3">
         <div class="d-flex align-items-start flex-column">
-          <div class="stat-title">Diesel</div>
+          <div class="stat-title">{{ stats.diesel.productName }}</div>
           <div class="stat-unit">
-            AGO<span class="value" :class="valueColor(stats.diesel.ago)"
-              >{{ stats.diesel.ago }}%</span
-            >
+            {{ stats.diesel.productCode }}<span class="value" :class="valueColor(stats.diesel.percentageDifference)">{{
+                stats.diesel.percentageDifference
+            }}%</span>
           </div>
-          <div class="stat-price">N{{ stats.diesel.amount }}</div>
+          <div class="stat-price">N{{ stats.diesel.newPrice }}</div>
         </div>
         <div class="d-flex align-items-start flex-column">
-          <div class="stat-title">Petrol</div>
+          <div class="stat-title">{{ stats.petrol.productName }}</div>
           <div class="stat-unit">
-            PMS<span class="value" :class="valueColor(stats.petrol.pms)"
-              >{{ stats.petrol.pms }}%</span
-            >
+            {{ stats.petrol.productCode }}<span class="value" :class="valueColor(stats.petrol.percentageDifference)">{{
+                stats.petrol.percentageDifference
+            }}%</span>
           </div>
-          <div class="stat-price">N{{ stats.petrol.amount }}</div>
+          <div class="stat-price">N{{ stats.petrol.newPrice }}</div>
         </div>
         <div class="d-flex align-items-start flex-column">
-          <div class="stat-title">Kerosine</div>
+          <div class="stat-title">{{ stats.kerosen.productName }}</div>
           <div class="stat-unit">
-            KPK<span class="value" :class="valueColor(stats.kerosen.kpk)"
-              >{{ stats.kerosen.kpk }}%</span
-            >
+            {{ stats.kerosen.productCode }}<span class="value"
+              :class="valueColor(stats.kerosen.percentageDifference)">{{
+                  stats.kerosen.percentageDifference
+              }}%</span>
           </div>
-          <div class="stat-price">N{{ stats.kerosen.amount }}</div>
+          <div class="stat-price">N{{ stats.kerosen.newPrice }}</div>
         </div>
         <div class="d-none d-sm-flex align-items-center flex-column">
           <button v-b-modal.bargain-dialog class="btn call-to-action">
@@ -306,20 +253,12 @@ export default {
     },
     async getStats() {
       try {
-        const collection = DB.collection("rates-stat");
-        collection.doc("petrol").onSnapshot((snapshot) => {
-          const data = snapshot.data();
-          this.stats.petrol = data;
-        });
-        collection.doc("diesel").onSnapshot((snapshot) => {
-          const data = snapshot.data();
-          this.stats.diesel = data;
-        });
-
-        collection.doc("kerosen").onSnapshot((snapshot) => {
-          const data = snapshot.data();
-          this.stats.kerosen = data;
-        });
+        const res = await this.$axios.get(
+          `https://faadoli.herokuapp.com/api/v1/product/only`
+        );
+        this.stats.kerosen = res.data.data.products[0];
+        this.stats.diesel = res.data.data.products[2];
+        this.stats.petrol = res.data.data.products[3];
       } catch (err) {
         console.log(err);
       }
