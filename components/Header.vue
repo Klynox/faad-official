@@ -20,10 +20,9 @@
             <li class="nav-item">
               <nuxt-link class="nav-link" to="/about">About</nuxt-link>
             </li>
-            <b-nav-item href="tel:+234700FAADOIL" class="support"
-              >Talk to someone
-              <img src="@/static/images/icon/support-light.png"
-            /></b-nav-item>
+            <b-nav-item href="tel:+234700FAADOIL" class="support">Talk to someone
+              <img src="@/static/images/icon/support-light.png" />
+            </b-nav-item>
           </b-navbar-nav>
         </b-collapse>
       </b-navbar>
@@ -33,89 +32,52 @@
           <b-form @submit.prevent="onSubmit" v-if="showForm">
             <div class="form-group">
               <div class="form-text label-text">Name</div>
-              <b-form-input
-                v-model="formData.name"
-                type="text"
-                placeholder="Enter your name"
-                :disabled="isLoading"
-                required
-              ></b-form-input>
+              <b-form-input v-model="formData.name" type="text" placeholder="Enter your name" :disabled="isLoading"
+                required></b-form-input>
             </div>
 
             <div class="form-group">
               <div class="form-text label-text">Email</div>
-              <b-form-input
-                v-model="formData.email"
-                type="email"
-                placeholder="Enter your email address"
-                :disabled="isLoading"
-                required
-              ></b-form-input>
+              <b-form-input v-model="formData.email" type="email" placeholder="Enter your email address"
+                :disabled="isLoading" required></b-form-input>
             </div>
 
             <div class="form-group">
               <div class="form-text label-text">Phone</div>
-              <b-form-input
-                v-model="formData.phone"
-                type="tel"
-                placeholder="Enter phone number"
-                :disabled="isLoading"
-                required
-              ></b-form-input>
+              <b-form-input v-model="formData.phone" type="tel" placeholder="Enter phone number" :disabled="isLoading"
+                required></b-form-input>
             </div>
 
             <div class="form-group">
               <div class="row">
                 <div class="col-sm-6">
                   <div class="form-text label-text">Fuel</div>
-                  <b-form-select
-                    v-model="formData.fuel"
-                    :options="fuels"
-                    :disabled="isLoading"
-                    required
-                  ></b-form-select>
+                  <b-form-select v-model="formData.fuel" :options="fuels" :disabled="isLoading" required>
+                  </b-form-select>
                 </div>
                 <div class="col-sm-6">
                   <div class="form-text label-text">Litres</div>
-                  <b-form-select
-                    v-model="formData.litres"
-                    :options="litres"
-                    :disabled="isLoading"
-                    required
-                  ></b-form-select>
+                  <b-form-select v-model="formData.litres" :options="litres" :disabled="isLoading" required>
+                  </b-form-select>
                 </div>
               </div>
             </div>
 
             <div class="form-group">
               <div class="form-text label-text">Address</div>
-              <b-form-input
-                v-model="formData.address"
-                type="text"
-                placeholder="Enter Address"
-                :disabled="isLoading"
-                required
-              ></b-form-input>
+              <b-form-input v-model="formData.address" type="text" placeholder="Enter Address" :disabled="isLoading"
+                required></b-form-input>
             </div>
 
-            <b-alert
-              :show="dismissCountDown"
-              dismissible
-              variant="warning"
-              @dismissed="dismissCountDown = 0"
-              @dismiss-count-down="countDownChanged"
-            >
+            <b-alert :show="dismissCountDown" dismissible variant="warning" @dismissed="dismissCountDown = 0"
+              @dismiss-count-down="countDownChanged">
               <p>
                 {{ errorMsg }}
               </p>
             </b-alert>
             <div class="d-flex justify-content-center mt-5">
-              <b-button type="submit" class="call-to-action" v-if="!isLoading"
-                >send bargain</b-button
-              >
-              <b-button type="submit" class="call-to-action" v-else
-                >loading...</b-button
-              >
+              <b-button type="submit" class="call-to-action" v-if="!isLoading">send bargain</b-button>
+              <b-button type="submit" class="call-to-action" v-else>loading...</b-button>
             </div>
           </b-form>
         </div>
@@ -128,17 +90,9 @@
             you ASAP, if you’d like to get a more immediate response please dial
             or click to call
           </p>
-          <a href="tel:+234700FAADOIL" class="btn btn-link active-contact"
-            >0700FAADOIL</a
-          >
-          <a href="tel:+2347003223645" class="btn btn-link active-contact"
-            >07003223645</a
-          >
-          <button
-            role="button"
-            class="close-dialog"
-            @click="$bvModal.hide('order-response-dialog')"
-          >
+          <a href="tel:+234700FAADOIL" class="btn btn-link active-contact">0700FAADOIL</a>
+          <a href="tel:+2347003223645" class="btn btn-link active-contact">07003223645</a>
+          <button role="button" class="close-dialog" @click="$bvModal.hide('order-response-dialog')">
             <img src="@/static/images/icon/close.png" />
             <span>Close</span>
           </button>
@@ -153,7 +107,7 @@
                 FAAD runs a 24/7 fuel supply and procurement service to over 200
                 offices, homes, schools and events.
               </p>
-              <button v-b-modal.modal-1 class="btn call-to-action">
+              <button v-b-modal.bargain-dialog class="btn call-to-action">
                 Place order
               </button>
             </div>
@@ -164,10 +118,7 @@
           <div class="partners-images">
             <img src="@/static/images/partners/1.png" />
             <img src="@/static/images/partners/2.png" />
-            <img
-              src="@/static/images/partners/3.png"
-              class="d-none d-sm-inline-block"
-            />
+            <img src="@/static/images/partners/3.png" class="d-none d-sm-inline-block" />
             <img src="@/static/images/partners/4.png" class="nt-lastchild" />
             <img src="@/static/images/partners/5.png" />
           </div>

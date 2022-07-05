@@ -6,7 +6,7 @@
         <b-form @submit.prevent="onSubmit" v-if="showForm">
           <div class="form-group">
             <div class="form-text label-text">Name</div>
-            <b-form-input v-model="formData.name" type="text" placeholder="Enter Your name" :disabled="isLoading"
+            <b-form-input v-model="formData.companyName" type="text" placeholder="Enter Your name" :disabled="isLoading"
               required></b-form-input>
           </div>
 
@@ -18,7 +18,7 @@
 
           <div class="form-group">
             <div class="form-text label-text">Phone</div>
-            <b-form-input v-model="formData.phone" type="tel" placeholder="Enter phone number" :disabled="isLoading"
+            <b-form-input v-model="formData.phoneNumber" type="tel" placeholder="Enter phone number" :disabled="isLoading"
               required></b-form-input>
           </div>
 
@@ -170,14 +170,16 @@ export default {
       dismissSecs: 10,
       dismissCountDown: 0,
       formData: {
-        name: null,
+        companyName: null,
         email: null,
-        phone: null,
+        phoneNumber: null,
         fuel: "AGO",
         litres: null,
         address: null,
-        askingPrice: "N350.77 / litre",
+        clientId: "12345",
+        askingPrice: "350.77",
         biddingPrice: null,
+        status: 'pending'
       },
     };
   },
@@ -202,8 +204,8 @@ export default {
     },
     isFormValid() {
       return (
-        this.formData.name != null &&
-        this.formData.name.trim() != "" &&
+        this.formData.companyName != null &&
+        this.formData.companyName.trim() != "" &&
         this.formData.email != null &&
         this.formData.email.trim() != "" &&
         this.formData.fuel != null &&
@@ -212,8 +214,8 @@ export default {
         this.formData.litres.trim() != "" &&
         this.formData.address != null &&
         this.formData.address.trim() != "" &&
-        this.formData.phone != null &&
-        this.formData.phone.trim() != "" &&
+        this.formData.phoneNumber != null &&
+        this.formData.phoneNumber.trim() != "" &&
         this.formData.biddingPrice != null &&
         this.formData.biddingPrice.trim() != "" &&
         this.formData.askingPrice != null &&
@@ -223,12 +225,12 @@ export default {
     clearForm() {
       this.errorMsg = null;
       this.isLoading = false;
-      this.formData.name = null;
+      this.formData.companyName = null;
       this.formData.email = null;
       this.formData.fuel = null;
       this.formData.litres = null;
       this.formData.address = null;
-      this.formData.phone = null;
+      this.formData.phoneNumber = null;
       this.formData.biddingPrice = null;
     },
     async onSubmit(event) {
@@ -236,7 +238,7 @@ export default {
       if (!this.isFormValid()) return;
       this.isLoading = true;
       try {
-        await this.$axios.post(`/faad-bargain`, this.formData);
+        await this.$axios.post(`https://faadoli.herokuapp.com/api/v1/bargain`, this.formData);
         this.clearForm();
         this.$bvModal.hide("bargain-dialog");
         this.$bvModal.show("bargain-response-dialog");
