@@ -18,8 +18,8 @@
 
           <div class="form-group">
             <div class="form-text label-text">Phone</div>
-            <b-form-input v-model="formData.phoneNumber" type="tel" placeholder="Enter phone number" :disabled="isLoading"
-              required></b-form-input>
+            <b-form-input v-model="formData.phoneNumber" type="tel" placeholder="Enter phone number"
+              :disabled="isLoading" required></b-form-input>
           </div>
 
           <div class="form-group">
@@ -30,8 +30,8 @@
               </div>
               <div class="col-sm-6">
                 <div class="form-text label-text">Litres</div>
-                <b-form-select v-model="formData.litres" :options="litres" :disabled="isLoading" required>
-                </b-form-select>
+                <b-form-input v-model="formData.quantity" type="tel" placeholder="Enter Litres"
+                  :disabled="isLoading" required></b-form-input>
               </div>
             </div>
           </div>
@@ -92,7 +92,7 @@
           <div class="stat-title">{{ stats.diesel.productName }}</div>
           <div class="stat-unit">
             {{ stats.diesel.productCode }}<span class="value" :class="valueColor(stats.diesel.percentageDifference)">{{
-                stats.diesel.percentageDifference
+            stats.diesel.percentageDifference
             }}%</span>
           </div>
           <div class="stat-price">N{{ stats.diesel.newPrice }}</div>
@@ -101,7 +101,7 @@
           <div class="stat-title">{{ stats.petrol.productName }}</div>
           <div class="stat-unit">
             {{ stats.petrol.productCode }}<span class="value" :class="valueColor(stats.petrol.percentageDifference)">{{
-                stats.petrol.percentageDifference
+            stats.petrol.percentageDifference
             }}%</span>
           </div>
           <div class="stat-price">N{{ stats.petrol.newPrice }}</div>
@@ -111,7 +111,7 @@
           <div class="stat-unit">
             {{ stats.kerosen.productCode }}<span class="value"
               :class="valueColor(stats.kerosen.percentageDifference)">{{
-                  stats.kerosen.percentageDifference
+              stats.kerosen.percentageDifference
               }}%</span>
           </div>
           <div class="stat-price">N{{ stats.kerosen.newPrice }}</div>
@@ -141,28 +141,12 @@ export default {
         kerosen: null,
       },
       showForm: true,
-      litres: [
-        { text: "Please select", value: null },
-        "less than 500",
-        "500-999",
-        "1,000-1,999",
-        "2,000-2,300",
-        "2,301-3,999",
-        "4,000-5,999",
-        "6,000-7,999",
-        "8,000-9,999",
-        "10,000-14,999",
-        "15,000-19,999",
-        "20,000-24,999",
-        "25,000-35,999",
-        "36,000+",
-      ],
       biddingPrices: [
         { text: "Please select", value: null },
-        "N20,00",
-        "N80,00",
-        "N200,00",
-        "N400,00",
+        "2000",
+        "8000",
+        "20000",
+        "40000",
       ],
       fuels: ["AGO", "PMS", "KPK"],
       isLoading: false,
@@ -174,9 +158,9 @@ export default {
         email: null,
         phoneNumber: null,
         fuel: "AGO",
-        litres: null,
+        quantity: null,
         address: null,
-        clientId: "12345",
+        clientId: 'None',
         askingPrice: "350.77",
         biddingPrice: null,
         status: 'pending'
@@ -210,8 +194,8 @@ export default {
         this.formData.email.trim() != "" &&
         this.formData.fuel != null &&
         this.formData.fuel.trim() != "" &&
-        this.formData.litres != null &&
-        this.formData.litres.trim() != "" &&
+        this.formData.quantity != null &&
+        this.formData.quantity.trim() != "" &&
         this.formData.address != null &&
         this.formData.address.trim() != "" &&
         this.formData.phoneNumber != null &&
@@ -228,7 +212,7 @@ export default {
       this.formData.companyName = null;
       this.formData.email = null;
       this.formData.fuel = null;
-      this.formData.litres = null;
+      this.formData.quantity = null;
       this.formData.address = null;
       this.formData.phoneNumber = null;
       this.formData.biddingPrice = null;
