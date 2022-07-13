@@ -160,7 +160,7 @@ export default {
         fuel: "AGO",
         quantity: null,
         address: null,
-        clientId: 'None',
+        
         askingPrice: "350.77",
         biddingPrice: null,
         status: 'pending'
@@ -222,7 +222,7 @@ export default {
       if (!this.isFormValid()) return;
       this.isLoading = true;
       try {
-        await this.$axios.post(`https://faadoli.herokuapp.com/api/v1/bargain`, this.formData);
+        await this.$axios.post(`https://faadoli.herokuapp.com/api/v1/open-bargain`, this.formData);
         this.clearForm();
         this.$bvModal.hide("bargain-dialog");
         this.$bvModal.show("bargain-response-dialog");
